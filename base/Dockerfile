@@ -11,8 +11,3 @@ RUN apt-get update && \
     rm -f /tmp/jitsi.key && \
     echo "deb https://download.jitsi.org $JITSI_RELEASE/" > /etc/apt/sources.list.d/jitsi.list && \
     apt-get clean
-
-RUN [ "$JITSI_RELEASE" = "unstable" ] && \
-    apt-get update && \
-    apt-get install -y jq procps curl vim iputils-ping net-tools && \
-    apt-get clean
